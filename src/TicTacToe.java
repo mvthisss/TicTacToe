@@ -52,10 +52,20 @@ public class TicTacToe {
                     tile.setBackground(Color.black);
                     tile.setForeground(Color.white);
                     tile.setFocusable(false);
+
+                    tile.addActionListener(new ActionListener(){
+                        public void actionPerformed(ActionEvent e){
+                            JButton tile= (JButton) e.getSource();
+                            tile.setText(currentPlayer);
+                        
+                            currentPlayer = currentPlayer==player1 ? player2 : player1;
+                            textLabel.setText( "tour du joueur " + currentPlayer);
+                        }
+                    });
                   
                             }
                         }
-                    }
+        }   
                 }
             
     
